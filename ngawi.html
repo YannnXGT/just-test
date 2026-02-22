@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Links | 4K Cinematic ✨</title>
+    
+    <!-- Ikon APK & Font Modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body, html {
+            height: 100%; width: 100%;
+            overflow: hidden; /* Menghapus scrollbar luar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- TEKNIK SCALING VIDEO 4K --- */
+        .video-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -2;
+            background: #000; /* Warna dasar jika video gagal load */
+        }
+
+        #bg-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* INI KUNCINYA: Memenuhi layar tanpa distorsi */
+            /* Optimalisasi untuk video resolusi tinggi */
+            image-rendering: auto;
+            filter: brightness(0.7) contrast(1.1); /* Sedikit gelap agar teks terbaca */
+        }
+
+        /* Overlay agar tampilan lebih "Aesthetic" */
+        .overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%);
+            z-index: -1;
+        }
+
+        /* --- KARTU LINK (GLASSMORPHISM) --- */
+        .glass-card {
+            width: 90%;
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.12); /* Transparansi tinggi */
+            backdrop-filter: blur(20px); /* Efek blur kaca premium */
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 35px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: cardEntrance 1s ease-out;
+        }
+
+        @keyframes cardEntrance {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .profile-img {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.7);
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+
+        h1 { color: #fff; font-size: 22px; margin-bottom: 5px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        p { color: #ddd; font-size: 13px; margin-bottom: 30px; }
+
+        /* --- TOMBOL APK --- */
+        .links-wrapper { display: flex; flex-direction: column; gap: 12px; }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            padding: 14px 22px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            text-decoration: none;
+            color: #222;
+            font-weight: 700;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn-link i { font-size: 1.5rem; margin-right: 15px; width: 30px; text-align: center; }
+
+        .btn-link:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Warna Ikon APK */
+        .fa-whatsapp { color: #25D366; }
+        .fa-instagram { color: #E1306C; }
+        .fa-tiktok { color: #000; }
+        .fa-heart { color: #ff4757; } /* Saweria */
+
+        /* Floating Particles (Lucu) */
+        .emoji-particle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 100;
+            animation: floatUp 5s linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VIDEO BACKGROUND 4K -->
+    <div class="video-container">
+        <video autoplay muted loop playsinline id="bg-video">
+            <!-- Ganti nama file video kamu di sini -->
+            <source src="frieren-amidst-water-lilies-beyond-journeys-end-moewalls-com.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div class="overlay"></div>
+
+    <div class="glass-card">
+        <!-- Foto Profil -->
+        <img src="wallhaven-gplw1e.png" class="profile-img" alt="Profile">
+        
+        <h1>Your Name ✨</h1>
+        <p>4K Cinematic Experience</p>
+
+        <div class="links-wrapper">
+            <a href="#https://chat.whatsapp.com/IfYIhvlZ5yIFiLY4imJx44" class="btn-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="#" class="btn-link">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="#https://www.tiktok.com/@luvia.lv?is_from_webapp=1&sender_device=pc" class="btn-link">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="#" class="btn-link">
+                <i class="fas fa-heart"></i> Saweria Support
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Efek Partikel Lucu yang Modern
+        function createEmoji() {
+            const emojis = ['✨', '⭐', '☁️', '🌸'];
+            const emoji = document.createElement('div');
+            emoji.classList.add('emoji-particle');
+            emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            emoji.style.left = Math.random() * 100 + "vw";
+            emoji.style.top = "100vh";
+            emoji.style.fontSize = (Math.random() * 15 + 10) + "px";
+            emoji.style.animationDuration = (Math.random() * 3 + 4) + "s";
+            
+            document.body.appendChild(emoji);
+            setTimeout(() => { emoji.remove(); }, 5000);
+        }
+        setInterval(createEmoji, 800);
+    </script>
+</body>
+</html>
